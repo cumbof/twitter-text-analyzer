@@ -7,6 +7,7 @@ package it.uniroma3.dia.tta.frame;
 import it.uniroma3.dia.tta.Application;
 import it.uniroma3.dia.tta.Controller;
 import it.uniroma3.dia.tta.utility.ImagePanel;
+import it.uniroma3.dia.tta.utility.InformationMap;
 import java.awt.Frame;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -28,6 +29,7 @@ public class MainWindow extends javax.swing.JFrame implements Application {
      */
     public MainWindow() {
         initComponents();
+        informationMap = new InformationMap();
     }
 
     /**
@@ -56,12 +58,9 @@ public class MainWindow extends javax.swing.JFrame implements Application {
         loadTestDataset_button.addActionListener(new Controller());
         runNaiveBayesClassifier_button = new javax.swing.JButton();
         runNaiveBayesClassifier_button.addActionListener(new Controller());
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
         wordFrequenciesDistribution_frame = new javax.swing.JInternalFrame();
         tagsComparisonDistribution_frame = new javax.swing.JInternalFrame();
         jSeparator3 = new javax.swing.JSeparator();
@@ -96,20 +95,6 @@ public class MainWindow extends javax.swing.JFrame implements Application {
         runNaiveBayesClassifier_button.setText("Run Naïve Bayes Classifier");
         runNaiveBayesClassifier_button.setEnabled(false);
 
-        jButton7.setText("?");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plotWordFrequenciesDistribution_help(evt);
-            }
-        });
-
-        jButton8.setText("?");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plotTagsComparisonDistribution_help(evt);
-            }
-        });
-
         jButton9.setText("?");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,13 +113,6 @@ public class MainWindow extends javax.swing.JFrame implements Application {
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loadTestDataset_help(evt);
-            }
-        });
-
-        jButton14.setText("?");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                runNaiveBayesClassifier_help(evt);
             }
         });
 
@@ -163,7 +141,7 @@ public class MainWindow extends javax.swing.JFrame implements Application {
         );
         tagsComparisonDistribution_frameLayout.setVerticalGroup(
             tagsComparisonDistribution_frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 229, Short.MAX_VALUE)
+            .addGap(0, 235, Short.MAX_VALUE)
         );
 
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -199,27 +177,20 @@ public class MainWindow extends javax.swing.JFrame implements Application {
                                 .addComponent(jButton13))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(stopWordsPath_text)
-                                            .addComponent(trainPath_text))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(loadStopWordsDataset_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(loadTrainDataset_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addComponent(plotWordFrequenciesDistribution_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(plotTagsComparisonDistribution_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(stopWordsPath_text)
+                                    .addComponent(trainPath_text))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(loadStopWordsDataset_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(loadTrainDataset_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButton10, javax.swing.GroupLayout.Alignment.TRAILING)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(runNaiveBayesClassifier_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton14))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(plotTagsComparisonDistribution_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(plotWordFrequenciesDistribution_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(runNaiveBayesClassifier_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -249,22 +220,16 @@ public class MainWindow extends javax.swing.JFrame implements Application {
                             .addComponent(loadStopWordsDataset_button)
                             .addComponent(jButton9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(plotWordFrequenciesDistribution_button)
-                            .addComponent(jButton7))
+                        .addComponent(plotWordFrequenciesDistribution_button)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(plotTagsComparisonDistribution_button)
-                            .addComponent(jButton8))
+                        .addComponent(plotTagsComparisonDistribution_button)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton13)
                             .addComponent(loadTestDataset_button)
                             .addComponent(testPath_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(runNaiveBayesClassifier_button)
-                            .addComponent(jButton14)))
+                        .addComponent(runNaiveBayesClassifier_button))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -306,39 +271,21 @@ public class MainWindow extends javax.swing.JFrame implements Application {
 
     private void loadTrainDataset_help(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadTrainDataset_help
         HelpWindow help = new HelpWindow();
-        help.setText("TRAIN DATASET INFORMATION:\n\n");
+        help.setText(informationMap.getInformationAbout("_TRAIN_"));
         help.setVisible(true);
     }//GEN-LAST:event_loadTrainDataset_help
 
     private void loadStopWordsDataset_help(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadStopWordsDataset_help
         HelpWindow help = new HelpWindow();
-        help.setText("STOPWORDS DATASET INFORMATION:\n\n");
+        help.setText(informationMap.getInformationAbout("_STOPWORDS_"));
         help.setVisible(true);
     }//GEN-LAST:event_loadStopWordsDataset_help
 
-    private void plotWordFrequenciesDistribution_help(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotWordFrequenciesDistribution_help
-        HelpWindow help = new HelpWindow();
-        help.setText("WORD FREQUENCIES DISTRIBUTION INFORMATION:\n\n");
-        help.setVisible(true);
-    }//GEN-LAST:event_plotWordFrequenciesDistribution_help
-
-    private void plotTagsComparisonDistribution_help(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plotTagsComparisonDistribution_help
-        HelpWindow help = new HelpWindow();
-        help.setText("PAIRWISE COMPARISON OF TAGS DISTRIBUTION INFORMATION:\n\n");
-        help.setVisible(true);
-    }//GEN-LAST:event_plotTagsComparisonDistribution_help
-
     private void loadTestDataset_help(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadTestDataset_help
         HelpWindow help = new HelpWindow();
-        help.setText("TEST DATASET INFORMATION:\n\n");
+        help.setText(informationMap.getInformationAbout("_TEST_"));
         help.setVisible(true);
     }//GEN-LAST:event_loadTestDataset_help
-
-    private void runNaiveBayesClassifier_help(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_runNaiveBayesClassifier_help
-        HelpWindow help = new HelpWindow();
-        help.setText("NAIVE BAYES CLASSIFIER INFORMATION:\n\n");
-        help.setVisible(true);
-    }//GEN-LAST:event_runNaiveBayesClassifier_help
 
     private void information_button(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_information_button
         InformationWindow info = new InformationWindow();
@@ -348,9 +295,6 @@ public class MainWindow extends javax.swing.JFrame implements Application {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -372,6 +316,8 @@ public class MainWindow extends javax.swing.JFrame implements Application {
     private javax.swing.JInternalFrame wordFrequenciesDistribution_frame;
     // End of variables declaration//GEN-END:variables
 
+    private InformationMap informationMap;
+    
     @Override
     public void setVisibleOverride(boolean visible) {
         this.setVisible(visible);

@@ -76,34 +76,24 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="stopWordsPath_text" max="32767" attributes="0"/>
-                                              <Component id="trainPath_text" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="loadStopWordsDataset_button" max="32767" attributes="0"/>
-                                              <Component id="loadTrainDataset_button" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="plotWordFrequenciesDistribution_button" max="32767" attributes="0"/>
-                                      <Component id="plotTagsComparisonDistribution_button" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="stopWordsPath_text" max="32767" attributes="0"/>
+                                      <Component id="trainPath_text" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="loadStopWordsDataset_button" max="32767" attributes="0"/>
+                                      <Component id="loadTrainDataset_button" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jButton7" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Component id="jButton9" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jButton8" alignment="1" min="-2" max="-2" attributes="0"/>
                                       <Component id="jButton10" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="runNaiveBayesClassifier_button" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton14" min="-2" max="-2" attributes="0"/>
-                              </Group>
                               <Component id="jPanel2" max="32767" attributes="0"/>
+                              <Component id="plotTagsComparisonDistribution_button" alignment="0" max="32767" attributes="0"/>
+                              <Component id="plotWordFrequenciesDistribution_button" max="32767" attributes="0"/>
+                              <Component id="runNaiveBayesClassifier_button" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -143,15 +133,9 @@
                               <Component id="jButton9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="plotWordFrequenciesDistribution_button" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="plotWordFrequenciesDistribution_button" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="plotTagsComparisonDistribution_button" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="plotTagsComparisonDistribution_button" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton13" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -159,10 +143,7 @@
                               <Component id="testPath_text" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="runNaiveBayesClassifier_button" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton14" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="runNaiveBayesClassifier_button" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jSeparator3" min="-2" pref="258" max="-2" attributes="0"/>
@@ -249,22 +230,6 @@
             <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="runNaiveBayesClassifier_button.addActionListener(new Controller());"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton7">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="?"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plotWordFrequenciesDistribution_help"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="?"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plotTagsComparisonDistribution_help"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="jButton9">
           <Properties>
             <Property name="text" type="java.lang.String" value="?"/>
@@ -287,14 +252,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loadTestDataset_help"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton14">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="?"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="runNaiveBayesClassifier_help"/>
           </Events>
         </Component>
         <Container class="javax.swing.JInternalFrame" name="wordFrequenciesDistribution_frame">
@@ -330,7 +287,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="229" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="235" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
